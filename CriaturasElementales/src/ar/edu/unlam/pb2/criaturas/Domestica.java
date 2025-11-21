@@ -14,7 +14,13 @@ public class Domestica extends Criatura {
 
 	@Override
 	protected void pacificarCriatura() {
+		this.pacificarCriatura();
 				
+	}
+
+	@Override
+	public Integer getEnergia() {
+		return this.energia;
 	}
 
 }

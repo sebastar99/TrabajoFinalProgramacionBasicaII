@@ -18,9 +18,16 @@ public class Ancestral extends Criatura {
 
 	@Override
 	protected void pacificarCriatura() {
-		if (this.estado == EstadoEmocional.INESTABLE) {
-			this.estado = EstadoEmocional.TRANQUILA;
+		if (this.getEstado() == EstadoEmocional.INESTABLE) {
+			this.setEstado(EstadoEmocional.TRANQUILA);
 		}
 	}
+
+	@Override
+	public Integer getEnergia() {
+		return this.energia;
+	}
+
+
 
 }
