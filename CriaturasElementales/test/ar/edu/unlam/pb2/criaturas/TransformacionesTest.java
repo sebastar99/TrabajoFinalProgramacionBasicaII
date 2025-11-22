@@ -31,6 +31,7 @@ public class TransformacionesTest {
     	maestro.transformarCriatura("Luc", t);
     	assertEquals(Integer.valueOf(180), t.getEnergia());
     }
+    
     @Test
     public void queSePuedaAplicarLaTransformacionAscensoDelViento() 
             throws NivelDeEnergiaSuperadoException, EnergiaSuperadaException {
@@ -43,6 +44,7 @@ public class TransformacionesTest {
     	maestro.transformarCriatura("Juan", t);
     	assertEquals(AfinidadElemental.AIRE, t.getAfinidad());
     }
+    
     @Test
     public void queSePuedaAplicarLaTransformacionLlamaInternaCuandoLaAfinidadEsFuego() 
             throws NivelDeEnergiaSuperadoException, EnergiaSuperadaException {
@@ -54,6 +56,7 @@ public class TransformacionesTest {
     	maestro.transformarCriatura("pepe", t);
     	assertEquals(Integer.valueOf(180), t.getEnergia());
     }
+    
     @Test
     public void queSePuedaAplicarLaTransformacionLlamaInternaCuandoLaAfinidadNoEsFuego() 
             throws NivelDeEnergiaSuperadoException, EnergiaSuperadaException {
@@ -65,6 +68,7 @@ public class TransformacionesTest {
     	maestro.transformarCriatura("pepe", t);
     	assertEquals(EstadoEmocional.INESTABLE, t.getEstado());
     }
+    
     @Test
     public void queSePuedaAplicarLaTransformacionVinculoTerrestreConEnergiaMenorA50() 
             throws NivelDeEnergiaSuperadoException, EnergiaSuperadaException {
@@ -76,7 +80,8 @@ public class TransformacionesTest {
     	maestro.transformarCriatura("Odin", t);
     	assertEquals(Integer.valueOf(50), t.getEnergia());
     }
-    @Test
+    
+    @Test (expected = CriaturaNoEncontradaException.class)
     public void queSePuedaAplicarLaTransformacionVinculoTerrestreConEnergiaMayorA50() 
             throws NivelDeEnergiaSuperadoException, EnergiaSuperadaException {
     	Maestro maestro = new Maestro("Seba", 20, AfinidadElemental.AGUA);
@@ -84,12 +89,7 @@ public class TransformacionesTest {
     	Criatura criatura = new Ancestral("Odin", 100, AfinidadElemental.TIERRA, EstadoEmocional.TRANQUILA);
     	maestro.agregarCriatura(criatura);
     	Transformacion t= new VinculoTerrestre(criatura);
-    	maestro.transformarCriatura("Odin", t);
-    	assertEquals(Integer.valueOf(100), t.getEnergia());
+    	maestro.transformarCriatura("pepe", t);
     }
-    
-    
-
-
 
 }

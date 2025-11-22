@@ -14,7 +14,7 @@ public class Domestica extends Criatura {
 
 	@Override
 	protected void pacificarCriatura() {
-		this.pacificarCriatura();
+		//this.pacificarCriatura();
 				
 	}
 

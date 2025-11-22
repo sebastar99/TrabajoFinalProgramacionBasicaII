@@ -27,7 +27,12 @@ public class Ancestral extends Criatura {
 	public Integer getEnergia() {
 		return this.energia;
 	}
-
-
+	
+	public void dominarInteraccion(Criatura criatura2) {
+        this.energia += 20;
+        criatura2.energia -= 15;
+        if(criatura2.getEnergia()<0)
+        	criatura2.energia =0;
+	}
 
 }

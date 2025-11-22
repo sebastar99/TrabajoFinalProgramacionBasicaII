@@ -42,9 +42,10 @@ public class Maestro {
 	    	criatura.pacificarCriatura(); 
 	    }
 	}
+	
 	public void transformarCriatura(String nombre, Transformacion transformacion) {
 	    if (!criaturas.containsKey(nombre)) {
-	        throw new IllegalArgumentException("No existe una criatura con ese nombre: " + nombre);
+	        throw new CriaturaNoEncontradaException ("No se encuentra la criatura con ese nombre");
 	    }
 
 	    criaturas.put(nombre, transformacion);
