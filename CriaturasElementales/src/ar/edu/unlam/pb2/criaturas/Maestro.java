@@ -50,5 +50,11 @@ public class Maestro {
 
 	    criaturas.put(nombre, transformacion);
 	}
+
+	public HashMap<String, Criatura> getCriaturas() {
+		return criaturas;
+	}
+
+
 	
 }
