@@ -32,7 +32,7 @@ public class CriaturasMaestrosTest {
 	}
 
 	@Test(expected = NivelDeEnergiaSuperadoException.class)
-	public void queNoSePuedanAsignarCriaturasAlMaestro() {
+	public void queNoSePuedanAsignarCriaturasAlMaestro() throws NivelDeMaestriaSuperadoException {
 		Maestro maestro = new Maestro("Seba", 25, AfinidadElemental.AGUA);
 		Criatura criatura = new Salvaje("pepe", 230, AfinidadElemental.FUEGO);
 	}

@@ -2,8 +2,6 @@ package ar.edu.unlam.pb2.criaturas;
 
 public class Salvaje extends Criatura {
 
-	
-
 	Salvaje(String nombre, Integer energia, AfinidadElemental afinidad) throws NivelDeEnergiaSuperadoException {
 	    super(nombre, energia, afinidad, EstadoEmocional.INESTABLE);
 	}
